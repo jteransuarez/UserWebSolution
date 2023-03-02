@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsersComponent } from './users/users.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
@@ -19,7 +18,6 @@ import { UserLayoutComponent } from './users/user-layout/user-layout.component';
   declarations: [
     AppComponent,
     UsersComponent,
-    UserDetailComponent,
     EditUserComponent,
     UserLayoutComponent
   ],

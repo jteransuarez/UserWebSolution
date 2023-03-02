@@ -29,7 +29,7 @@ export class UserService {
 
   delete(useruid: string) {
     let url = environment.baseUrl + "delete?uid=" + useruid;
-    return this.http.post<any>(url, null).toPromise();
+    return this.http.delete(url).toPromise();
   }
 
 
