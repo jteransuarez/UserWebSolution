@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="col-3">
+
+  </div>
+  <div class="col">
+    <button type="button" class="btn btn-info w-100" [routerLink]="['../']" *ngIf="!user">Regresar</button>
+    <button type="button" class="btn btn-info w-100" [routerLink]="['../../']" *ngIf="user">Regresar</button>
+  </div>
+  <div class="col-3">
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+
+  </div>
+  <div class="col">
+    <form [formGroup]="userForm">
+      <div class="form-row mb-1 mt-1">
+        <!--<div class="col-3">
+      Usuario
+    </div>-->
+        <div class="col-12">
+          <input formControlName="username"
+                 class="form-control form-control-sm"
+                 placeholder="Usuario"
+                 [ngClass]="{ 'is-invalid': submitted && username.errors ,'is-valid': submitted && !username.errors}">
+
+          <div class="text-danger" *ngIf="submitted && username.errors">
+            Ingresa el usuario
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row mb-1 mt-1">
+        <!--<div class="col-3">
+      Nombre
+    </div>-->
+        <div class="col-12">
+          <input formControlName="firstname"
+                 class="form-control form-control-sm"
+                 placeholder="Nombre"
+                 [ngClass]="{ 'is-invalid': submitted && firstname.errors ,'is-valid': submitted && !firstname.errors}">
+
+          <div class="text-danger" *ngIf="submitted && firstname.errors">
+            Ingresa el nombre
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row mb-1 mt-1">
+        <!--<div class="col-3">
+      Apellidos
+    </div>-->
+        <div class="col-12">
+          <input formControlName="lastname"
+                 class="form-control form-control-sm"
+                 placeholder="Apellidos"
+                 [ngClass]="{ 'is-invalid': submitted && lastname.errors ,'is-valid': submitted && !lastname.errors}">
+
+          <div class="text-danger" *ngIf="submitted && lastname.errors">
+            Ingresa el apellido
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row mb-1 mt-1">
+        <!--<div class="col-3">
+      Apellidos
+    </div>-->
+        <div class="col-12">
+          <input formControlName="email"
+                 class="form-control form-control-sm"
+                 placeholder="Email"
+                 [ngClass]="{ 'is-invalid': submitted && email.errors ,'is-valid': submitted && !email.errors}">
+
+          <div class="text-danger" *ngIf="submitted && email.errors">
+            <div *ngIf="submitted && email?.errors?.['required']">
+              Ingresa el email
+            </div>
+            <div *ngIf="submitted && email?.errors?.['email']">
+              Ingresa el formato correcto
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row mb-1">
+        <div class="col-12">
+          <button type="button" class="btn btn-primary w-100" (click)="save()">
+            <i class="fas fa-save"></i>
+            Guardar usuario
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-3">
+
+  </div>
+
+</div>
+
+

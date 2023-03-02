@@ -1,0 +1,42 @@
+<div class="row mt-3 mb-2">
+  <div class="col-12">
+    <button class="btn btn-primary w-100" (click)="editUser(null)">Nuevo Usuario</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Acción</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.username }}</td>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="delete(user.uid)">Eliminar</button>
+          </td>
+          <td>
+            <button class="btn btn-dark" [class.selected]="user === selectedUser"  (click)="editUser(user)">Editar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
